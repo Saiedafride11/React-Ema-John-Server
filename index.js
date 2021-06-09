@@ -13,6 +13,10 @@ const app = express()
 app.use(cors())
 app.use(bodyParser.json())
 
+app.get('/', (req, res) => {
+    res.send("Hello Form DB, Its Working Succesfully")
+})
+
 const client = new MongoClient(uri, { useNewUrlParser: true, useUnifiedTopology: true });
 client.connect(err => {
   const productsCollection = client.db("emaJohnStore").collection("products");
