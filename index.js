@@ -32,7 +32,6 @@ client.connect(err => {
             res.send(result.insertedCount)
       })
   })
-
   
   app.get('/products', (req, res) => {
       productsCollection.find({})  //.limit(20)
